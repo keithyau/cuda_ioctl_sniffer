@@ -22,7 +22,7 @@ support = [
 ]
 
 import clang.cindex as ci
-ci.Config.set_library_file("/usr/lib/x86_64-linux-gnu/libclang-10.so.1")
+ci.Config.set_library_file("/usr/lib/x86_64-linux-gnu/libclang-18.so.1")
 index = ci.Index.create()
 
 lookup = {}

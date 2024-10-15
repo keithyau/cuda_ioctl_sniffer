@@ -2,10 +2,10 @@
 mkdir -p out
 ./make_sniff.sh
 
-ptxas simple.ptx --gpu-name sm_86 -o out/simple.o # -O1 -v
-cuobjdump out/simple.o -sass
+#ptxas simple.ptx --gpu-name sm_86 -o out/simple.o # -O1 -v
+#cuobjdump out/simple.o -sass
 
-clang++ gpu_driver.cc tc_context.cc \
+clang++ gpu_driver.cc tc_context.cc -DDISABLE_CUDA_SUPPORT \
   -Iopen-gpu-kernel-modules/kernel-open/common/inc \
   -Iopen-gpu-kernel-modules/kernel-open/nvidia-uvm \
   -Iopen-gpu-kernel-modules/src/common/sdk/nvidia/inc \
